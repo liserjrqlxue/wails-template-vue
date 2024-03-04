@@ -2,15 +2,19 @@
 import { useI18n } from "vue-i18n";
 
 const { t, availableLocales: languages, locale } = useI18n();
+import {WindowMinimise,Quit} from "../wailsjs/runtime/runtime";
 
 const onclickLanguageHandle = (item: string) => {
   item !== locale.value ? (locale.value = item) : false;
 };
 
-const onclickMinimise = () => {};
+const onclickMinimise = () => {
+  WindowMinimise();
+};
 
-const onclickQuit = () => {};
-
+const onclickQuit = () => {
+  Quit();
+};
 document.body.addEventListener("click", function (event) {
   event.preventDefault();
 });
